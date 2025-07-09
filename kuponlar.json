@@ -2,20 +2,19 @@
   "kuponlar": [
     {
       "isim": "Günün Kombine Kuponu",
+      "coin": 20,
       "maclar": [
         {
           "mac": "Kayseri - Fenerbahçe",
           "tahmin": "2.5 ÜST",
           "oran": 1.45,
-          "kategori": "ücretli",
-          "tarih": "2025-07-11 21:00"
+          "kategori": "ücretli"
         },
         {
           "mac": "Beşiktaş - Adana",
           "tahmin": "MAÇ SONUCU 1",
           "oran": 1.35,
-          "kategori": "ücretsiz",
-          "tarih": "2025-07-12 20:00"
+          "kategori": "ücretsiz"
         }
       ]
     }

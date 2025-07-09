@@ -4,8 +4,18 @@
       "isim": "Günün Kombine Kuponu",
       "coin": 20,
       "maclar": [
-        { "mac": "Lask Linz - Brondby", "tahmin": "2.5 ÜST", "oran": 1.45 },
-        { "mac": "Az Alkmaar - Aris", "tahmin": "MAÇ SONUCU 1", "oran": 1.35 }
+        {
+          "mac": "Lask Linz - Brondby",
+          "tahmin": "2.5 ÜST",
+          "oran": 1.45,
+          "tarih": "2025-07-12 21:30"
+        },
+        {
+          "mac": "Az Alkmaar - Aris",
+          "tahmin": "MAÇ SONUCU 1",
+          "oran": 1.35,
+          "tarih": "2025-07-12 22:00"
+        }
       ]
     }
   ]

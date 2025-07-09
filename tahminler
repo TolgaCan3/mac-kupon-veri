@@ -1,0 +1,23 @@
+{
+  "tahminler": [
+    {
+      "mac": "Wolfsberger - Braga",
+      "tahmin": "2.5 ÜST",
+      "oran": 1.95,
+      "kategori": "ücretli",
+      "coin": 50
+    },
+      "mac": "Sarpsborg - Viking",
+      "tahmin": "2.5 ÜST",
+      "oran": 1.95,
+      "kategori": "ücretli",
+      "coin": 50
+    },
+    {
+      "mac": "Panathinaikos - Schalke",
+      "tahmin": "KG VAR",
+      "oran": 1.72,
+      "kategori": "ücretsiz"
+    }
+  ]
+}

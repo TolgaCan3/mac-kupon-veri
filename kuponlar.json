@@ -4,16 +4,16 @@
       "isim": "Günün Kombine Kuponu",
       "maclar": [
         {
-          "mac": "Galatasaray - Fenerbahçe",
+          "mac": "Kayseri - Fenerbahçe",
           "tahmin": "2.5 ÜST",
-          "oran": 1.95,
+          "oran": 1.45,
           "kategori": "ücretli",
           "tarih": "2025-07-11 21:00"
         },
         {
-          "mac": "Beşiktaş - Trabzonspor",
-          "tahmin": "KG VAR",
-          "oran": 1.72,
+          "mac": "Beşiktaş - Adana",
+          "tahmin": "MAÇ SONUCU 1",
+          "oran": 1.35,
           "kategori": "ücretsiz",
           "tarih": "2025-07-12 20:00"
         }

@@ -5,14 +5,13 @@
       "tahmin": "2.5 ÜST",
       "oran": 1.95,
       "kategori": "ücretli",
-      "coin": 20
+      "coin": 10
     },
     {
       "mac": "Beşiktaş - Trabzonspor",
       "tahmin": "KG VAR",
       "oran": 1.72,
-      "kategori": "ücretli"
-      "coin": 20
+      "kategori": "ücretsiz"
     }
   ]
 }

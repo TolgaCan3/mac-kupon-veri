@@ -1,0 +1,17 @@
+{
+  "tahminler": [
+    {
+      "mac": "Galatasaray - Konyaspor",
+      "tahmin": "2.5 ÜST",
+      "oran": 1.95,
+      "kategori": "ücretsiz",
+      
+    },
+    {
+      "mac": "Beşiktaş - Hatay",
+      "tahmin": "KG VAR",
+      "oran": 1.72,
+      "kategori": "ücretsiz"
+    }
+  ]
+}

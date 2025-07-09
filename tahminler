@@ -1,23 +1,34 @@
 {
   "tahminler": [
     {
-      "mac": "Wolfsberger - Braga",
+      "mac": "Galatasaray - Fenerbahçe",
       "tahmin": "2.5 ÜST",
       "oran": 1.95,
       "kategori": "ücretli",
-      "coin": 50
-    },
-      "mac": "Sarpsborg - Viking",
-      "tahmin": "2.5 ÜST",
-      "oran": 1.95,
-      "kategori": "ücretli",
-      "coin": 50
+      "coin": 10,
+      "tarih": "2025-07-14 21:00"
     },
     {
-      "mac": "Panathinaikos - Schalke",
+      "mac": "Beşiktaş - Trabzonspor",
       "tahmin": "KG VAR",
       "oran": 1.72,
-      "kategori": "ücretsiz"
+      "kategori": "ücretsiz",
+      "tarih": "2025-07-14 20:00"
+    },
+    {
+      "mac": "Adana Demirspor - Kasımpaşa",
+      "tahmin": "MS 1",
+      "oran": 1.65,
+      "kategori": "ücretli",
+      "coin": 15,
+      "tarih": "2025-07-15 19:00"
+    },
+    {
+      "mac": "Samsunspor - Rizespor",
+      "tahmin": "2.5 ALT",
+      "oran": 1.60,
+      "kategori": "ücretsiz",
+      "tarih": "2025-07-15 18:30"
     }
   ]
 }

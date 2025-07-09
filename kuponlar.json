@@ -4,18 +4,8 @@
       "isim": "Günün Kombine Kuponu",
       "coin": 20,
       "maclar": [
-        {
-          "mac": "Kayseri - Fenerbahçe",
-          "tahmin": "2.5 ÜST",
-          "oran": 1.45,
-          "kategori": "ücretli"
-        },
-        {
-          "mac": "Beşiktaş - Adana",
-          "tahmin": "MAÇ SONUCU 1",
-          "oran": 1.35,
-          "kategori": "ücretsiz"
-        }
+        { "mac": "Lask Linz - Brondby", "tahmin": "2.5 ÜST", "oran": 1.45 },
+        { "mac": "Az Alkmaar - Aris", "tahmin": "MAÇ SONUCU 1", "oran": 1.35 }
       ]
     }
   ]

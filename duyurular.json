@@ -1,1 +1,14 @@
-
+{
+  "duyuru": [
+    {
+      "baslik": "Güncelleme!",
+      "icerik": "Artık coin satın alımları daha hızlı! Ayrıca yeni kupon bölümü açıldı.",
+      "tarih": "2025-07-12"
+    },
+    {
+      "baslik": "Bakım Çalışması",
+      "icerik": "Sunucu bakımda. Tahminler kısa süreliğine güncellenmeyecek.",
+      "tarih": "2025-07-10"
+    }
+  ]
+}

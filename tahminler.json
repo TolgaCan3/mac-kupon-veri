@@ -1,18 +1,25 @@
 {
-    "tahminler": [
-        {
-            "mac": "Beşiktaş - Trabzonspor",
-            "tahmin": "KG VAR",
-            "oran": 1.72,
-            "kategori": "ücretsiz",
-            "tarih": "2025-07-14 20:00"
-        },
-        {
-            "mac": "City- - Real",
-            "tahmin": "MS 1",
-            "oran": 1.65,
-            "kategori": "ücretsiz",
-            "tarih": "2025-07-15 19:00"
-        }
-    ]
+  "tahminler": [
+    {
+      "mac": "Beşiktaş - Trabzonspor",
+      "tahmin": "KG VAR",
+      "oran": 1.72,
+      "kategori": "ücretsiz",
+      "tarih": "2025-07-14 20:00"
+    },
+    {
+      "mac": "City - Real",
+      "tahmin": "MS 1",
+      "oran": 1.65,
+      "kategori": "ücretsiz",
+      "tarih": "2025-07-15 19:00"
+    },
+    {
+      "mac": "Galatasaray - Fenerbahçe",
+      "tahmin": "MS 2",
+      "oran": 2.10,
+      "kategori": "ücretsiz",
+      "tarih": "2025-07-16 21:00"
+    }
+  ]
 }

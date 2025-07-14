@@ -8,12 +8,14 @@
           "mac": "Lask Linz - Brondby",
           "tahmin": "2.5 ÜST",
           "oran": 1.45,
+		  "kategori": "kuponlar"
           "tarih": "2025-07-12 21:30"
         },
         {
           "mac": "Az Alkmaar - Aris",
           "tahmin": "MS 1",
           "oran": 1.35,
+		  "kategori": "kuponlar"
           "tarih": "2025-07-12 22:00"
         }
       ]
@@ -26,12 +28,14 @@
           "mac": "Lask Linz - Brondby",
           "tahmin": "2.5 ÜST",
           "oran": 1.45,
+		  "kategori": "kuponlar"
           "tarih": "2025-07-12 21:30"
         },
         {
           "mac": "Az Alkmaar - Aris",
           "tahmin": "MS 1",
           "oran": 1.35,
+		  "kategori": "kuponlar"
           "tarih": "2025-07-12 22:00"
         }
       ]
@@ -44,12 +48,14 @@
           "mac": "Lask Linz - Brondby",
           "tahmin": "2.5 ÜST",
           "oran": 1.45,
+		  "kategori": "kuponlar"
           "tarih": "2025-07-12 21:30"
         },
         {
           "mac": "Az Alkmaar - Aris",
           "tahmin": "MS 1",
           "oran": 1.35,
+		  "kategori": "kuponlar"
           "tarih": "2025-07-12 22:00"
         }
       ]

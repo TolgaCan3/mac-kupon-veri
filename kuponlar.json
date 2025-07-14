@@ -5,16 +5,46 @@
       "coin": 20,
       "maclar": [
         {
-          "mac": "Lask Linz - Brondby",
+          "mac": "Sarajevo - Zoria Luhansk",
           "tahmin": "2.5 ÜST",
           "oran": 1.45,
           "tarih": "2025-07-12 21:30"
         },
         {
-          "mac": "Az Alkmaar - Aris",
-          "tahmin": "MAÇ SONUCU 1",
+          "mac": "Botosani - Ssc Farul",
+          "tahmin": "MS 1",
           "oran": 1.35,
           "tarih": "2025-07-12 22:00"
+        }
+      ]
+    },
+    {
+      "isim": "Günün İdeal Kuponu",
+      "coin": 25,
+      "maclar": [
+        {
+          "mac": "Lahti - Turku",
+          "tahmin": "KG VAR",
+          "oran": 1.65,
+          "tarih": "2025-07-12 18:00"
+        },
+        {
+          "mac": "Riestra - Lanus",
+          "tahmin": "1X",
+          "oran": 1.40,
+          "tarih": "2025-07-12 19:00"
+        }
+      ]
+    },
+    {
+      "isim": "Banko Kupon",
+      "coin": 40,
+      "maclar": [
+        {
+          "mac": "Galatasaray - Fenerbahçe",
+          "tahmin": "MS 2",
+          "oran": 2.05,
+          "tarih": "2025-07-13 21:45"
         }
       ]
     }

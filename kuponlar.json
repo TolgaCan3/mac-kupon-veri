@@ -1,64 +1,52 @@
 {
-    "kuponlar": [
+  "kuponlar": [
+    {
+      "isim": "Günün Kombine Kuponu",
+      "coin": 20,
+      "maclar": [
         {
-            "isim": "Günün Kombine Kuponu",
-            "coin": 20,
-            "maclar": [
-                {
-                    "mac": "Lask Linz - Brondby",
-                    "tahmin": "2.5 ÜST",
-                    "oran": 1.45,
-                    "kategori": "kuponlar",
-                    "tarih": "2025-07-12 21:30"
-                },
-                {
-                    "mac": "Az Alkmaar - Aris",
-                    "tahmin": "MS 1",
-                    "oran": 1.35,
-                    "kategori": "kuponlar",
-                    "tarih": "2025-07-12 22:00"
-                }
-            ]
+          "mac": "Lask Linz - Brondby",
+          "tahmin": "2.5 ÜST",
+          "oran": 1.45,
+          "tarih": "2025-07-12 21:30"
         },
         {
-            "isim": "Günün İdeal Kuponu",
-            "coin": 25,
-            "maclar": [
-                {
-                    "mac": "Lask Linz - Brondby",
-                    "tahmin": "2.5 ÜST",
-                    "oran": 1.45,
-                    "kategori": "kuponlar",
-                    "tarih": "2025-07-12 21:30"
-                },
-                {
-                    "mac": "Az Alkmaar - Aris",
-                    "tahmin": "MS 1",
-                    "oran": 1.35,
-                    "kategori": "kuponlar",
-                    "tarih": "2025-07-12 22:00"
-                }
-            ]
-        },
-        {
-            "isim": "Günün Banko Kuponu",
-            "coin": 50,
-            "maclar": [
-                {
-                    "mac": "Lask Linz - Brondby",
-                    "tahmin": "2.5 ÜST",
-                    "oran": 1.45,
-                    "kategori": "kuponlar",
-                    "tarih": "2025-07-12 21:30"
-                },
-                {
-                    "mac": "Az Alkmaar - Aris",
-                    "tahmin": "MS 1",
-                    "oran": 1.35,
-                    "kategori": "kuponlar",
-                    "tarih": "2025-07-12 22:00"
-                }
-            ]
+          "mac": "Az Alkmaar - Aris",
+          "tahmin": "MS 1",
+          "oran": 1.35,
+          "tarih": "2025-07-12 22:00"
         }
-    ]
+      ]
+    },
+    {
+      "isim": "Günün İdeal Kuponu",
+      "coin": 25,
+      "maclar": [
+        {
+          "mac": "Team X - Team Y",
+          "tahmin": "KG VAR",
+          "oran": 1.65,
+          "tarih": "2025-07-12 18:00"
+        },
+        {
+          "mac": "Team A - Team B",
+          "tahmin": "1X",
+          "oran": 1.40,
+          "tarih": "2025-07-12 19:00"
+        }
+      ]
+    },
+    {
+      "isim": "Banko Kupon",
+      "coin": 40,
+      "maclar": [
+        {
+          "mac": "Galatasaray - Fenerbahçe",
+          "tahmin": "MS 2",
+          "oran": 2.05,
+          "tarih": "2025-07-13 21:45"
+        }
+      ]
+    }
+  ]
 }

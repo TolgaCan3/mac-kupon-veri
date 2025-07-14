@@ -5,13 +5,13 @@
       "coin": 20,
       "maclar": [
         {
-          "mac": "Lask Linz - Brondby",
+          "mac": "Sarajevo - Zoria Luhansk",
           "tahmin": "2.5 ÜST",
           "oran": 1.45,
           "tarih": "2025-07-12 21:30"
         },
         {
-          "mac": "Az Alkmaar - Aris",
+          "mac": "Botosani - Ssc Farul",
           "tahmin": "MS 1",
           "oran": 1.35,
           "tarih": "2025-07-12 22:00"
@@ -23,13 +23,13 @@
       "coin": 25,
       "maclar": [
         {
-          "mac": "Team X - Team Y",
+          "mac": "Lahti - Turku",
           "tahmin": "KG VAR",
           "oran": 1.65,
           "tarih": "2025-07-12 18:00"
         },
         {
-          "mac": "Team A - Team B",
+          "mac": "Riestra - Lanus",
           "tahmin": "1X",
           "oran": 1.40,
           "tarih": "2025-07-12 19:00"

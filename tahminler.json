@@ -1,14 +1,6 @@
 {
   "tahminler": [
     {
-      "mac": "Galatasaray - Fenerbahçe",
-      "tahmin": "2.5 ÜST",
-      "oran": 1.95,
-      "kategori": "ücretli",
-      "coin": 50,
-      "tarih": "2025-07-14 21:00"
-    },
-    {
       "mac": "Beşiktaş - Trabzonspor",
       "tahmin": "KG VAR",
       "oran": 1.72,
@@ -16,15 +8,14 @@
       "tarih": "2025-07-14 20:00"
     },
     {
-      "mac": "Adana Demirspor - Kasımpaşa",
+      "mac": "City- - Real",
       "tahmin": "MS 1",
       "oran": 1.65,
-      "kategori": "ücretli",
-      "coin": 50,
+      "kategori": "ücretsiz",
       "tarih": "2025-07-15 19:00"
     },
     {
-      "mac": "Samsunspor - Rizespor",
+      "mac": "Samsunspor - Malatya",
       "tahmin": "2.5 ALT",
       "oran": 1.60,
       "kategori": "ücretsiz",

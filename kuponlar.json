@@ -15,7 +15,10 @@
           "tahmin": "MS 1",
           "oran": 1.35,
           "tarih": "2025-07-12 22:00"
-          {
+        }
+      ]
+    },
+    {
       "isim": "Günün İdeal Kuponu",
       "coin": 25,
       "maclar": [
@@ -30,7 +33,10 @@
           "tahmin": "MS 1",
           "oran": 1.35,
           "tarih": "2025-07-12 22:00"
-          {
+        }
+      ]
+    },
+    {
       "isim": "Günün Banko Kuponu",
       "coin": 50,
       "maclar": [
@@ -45,10 +51,8 @@
           "tahmin": "MS 1",
           "oran": 1.35,
           "tarih": "2025-07-12 22:00"
-          
         }
       ]
     }
   ]
 }
-  

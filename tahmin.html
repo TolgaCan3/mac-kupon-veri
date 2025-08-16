@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>İddaa Tahmin</title>
+<style>
+  :root{
+    --bg:#0f1220; --card:#151a2e; --muted:#8ea0c6; --acc:#6cf1ff; --vip:#f7c948; --ok:#35d07f; --danger:#ff6b6b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    color:#e9eeff; background:
+      radial-gradient(60vw 60vw at -10% -20%, #1f2a4d 0, transparent 60%),
+      radial-gradient(50vw 50vw at 110% -10%, #22306a 0, transparent 60%),
+      linear-gradient(180deg, #0b0e1a, #0f1220);
+    min-height:100vh; padding:22px 16px 28px;
+  }
+  header{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .logo{font-weight:800;font-size:22px;letter-spacing:.4px}
+  .chip{padding:6px 10px;border:1px solid #2a355b;border-radius:999px;color:var(--muted);font-size:12px}
+  .wrap{max-width:980px;margin:16px auto 0}
+
+  /* tabs */
+  .tabs{display:flex;gap:8px;margin:18px 0}
+  .tab{flex:1;text-align:center;padding:10px 12px;border-radius:12px;cursor:pointer;
+       background:#12162a;border:1px solid #232a49;color:#b7c4ea;user-select:none}
+  .tab.active{background:linear-gradient(180deg,#1a2040,#131a33);border-color:#2e3969;color:#fff;
+              box-shadow:inset 0 1px 0 #2c3866, 0 0 0 1px #10162a}
+  .bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:6px 0 14px}
+  .btn{
+    padding:10px 14px;border:0;border-radius:12px;background:linear-gradient(180deg,#21e1ff,#14b8c5);
+    color:#00121a;font-weight:700;cursor:pointer
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-ghost{background:#12162a;color:#b7c4ea;border:1px solid #2a355b}
+  .search{flex:1;min-width:200px;background:#0f1428;border:1px solid #243056;border-radius:12px;
+          padding:10px 12px;color:#dfe8ff}
+  .select{background:#0f1428;border:1px solid #243056;border-radius:12px;padding:10px 12px;color:#dfe8ff}
+
+  /* cards */
+  .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:12px}
+  @media (min-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (min-width:980px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .card{
+    background:linear-gradient(180deg,#161b34,#10162c);
+    border:1px solid #2b375f;border-radius:16px;padding:14px;position:relative;overflow:hidden
+  }
+  .card:before{
+    content:"";position:absolute;inset:-1px;pointer-events:none;border-radius:16px;
+    background:radial-gradient(200px 120px at 120% -10%, #6cf1ff33, transparent 60%);
+    mix-blend:screen
+  }
+  .head{display:flex;align-items:center;gap:10px}
+  .badge{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid #2b375f;background:#10162c;color:#b7c4ea}
+  .badge.vip{border-color:#5a4b1a;background:#1b170a;color:#ffec9c}
+  .teams{font-weight:700}
+  .sub{color:var(--muted);font-size:12px;margin-top:4px}
+  .pick{margin-top:10px;display:flex;gap:8px;align-items:center}
+  .pill{padding:6px 10px;border-radius:10px;background:#0f1428;border:1px solid #27345a;color:#cfe0ff;font-weight:700}
+  .pill.good{background:#0f1f19;border-color:#345e4a;color:#bff6d6}
+  .del{
+    position:absolute;top:8px;right:8px;border:0;border-radius:10px;padding:6px 8px;cursor:pointer;
+    background:#1a0f12;border:1px solid #5f2b36;color:#ffc6cc
+  }
+
+  /* modal */
+  dialog{border:1px solid #2b375f;border-radius:16px;padding:0;background:#0f1426;color:#e9eeff;max-width:520px}
+  dialog::backdrop{background:#0009}
+  .modal-h{padding:14px 16px;border-bottom:1px solid #21305a;font-weight:700}
+  .modal-b{padding:14px 16px;display:grid;gap:10px}
+  .modal-f{padding:14px 16px;border-top:1px solid #21305a;display:flex;gap:8px;justify-content:flex-end}
+  .in{width:100%;padding:10px 12px;border-radius:12px;background:#0b1123;border:1px solid #27345a;color:#dfe8ff}
+  .hint{font-size:12px;color:#9bb0e0}
+  .link{color:#7ce8ff;text-decoration:none}
+  .empty{padding:16px;border:1px dashed #2b375f;border-radius:14px;text-align:center;color:#aab8e4}
+  footer{opacity:.6;margin-top:18px;font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">⚽ İddaa Tahmin</div>
+      <span class="chip">Gün: <span id="dayLabel"></span></span>
+      <span class="chip">Toplam: <span id="countLabel">0</span></span>
+    </header>
+
+    <div class="tabs">
+      <div id="tabFree" class="tab active" onclick="switchTab('free')">🎁 Ücretsiz</div>
+      <div id="tabVip" class="tab" onclick="switchTab('vip')">🔒 VIP</div>
+    </div>
+
+    <div class="bar">
+      <input id="q" class="search" placeholder="Takım, lig, tahmin ara…" oninput="render()" />
+      <select id="fDay" class="select" onchange="render()">
+        <option value="all">Tümü</option>
+        <option value="today">Bugün</option>
+        <option value="yesterday">Dün</option>
+        <option value="week">Son 7 gün</option>
+      </select>
+      <select id="fPick" class="select" onchange="render()">
+        <option value="all">Tahmin: Tümü</option>
+        <option>MS 1</option><option>MS 0</option><option>MS 2</option>
+        <option>2.5 ÜST</option><option>2.5 ALT</option>
+        <option>KG VAR</option><option>KG YOK</option>
+      </select>
+      <button class="btn" onclick="openModal()">➕ Tahmin Ekle</button>
+      <button class="btn btn-ghost" onclick="seed()">🎯 Örnek Yükle</button>
+      <button class="btn btn-ghost" onclick="clearAll()">🗑️ Temizle</button>
+    </div>
+
+    <div id="list" class="grid"></div>
+    <div id="empty" class="empty" style="display:none">Henüz tahmin yok. “➕ Tahmin Ekle” ile başlayın.</div>
+
+    <footer>Made with ❤️ — LocalStorage üzerinde çalışır. Mobiroller’de <a class="link" href="#" onclick="alert('Özel ekranınıza sadece aşağıdaki gibi iframe ekleyin:\\n\\n<iframe src=\\'https://kullanici.github.io/tahmin-app/tahmin.html\\' style=\\'border:0;width:100%;height:100vh\\'></iframe>')">nasıl gömülür?</a></footer>
+  </div>
+
+  <!-- MODAL -->
+  <dialog id="dlg">
+    <div class="modal-h">➕ Tahmin Ekle</div>
+    <div class="modal-b">
+      <input id="inHome" class="in" placeholder="Ev sahibi takım" />
+      <input id="inAway" class="in" placeholder="Deplasman takım" />
+      <input id="inLeague" class="in" placeholder="Lig (opsiyonel)" />
+      <div style="display:flex; gap:8px">
+        <select id="inPick" class="in">
+          <option value="">Tahmin seç</option>
+          <option>MS 1</option><option>MS 0</option><option>MS 2</option>
+          <option>2.5 ÜST</option><option>2.5 ALT</option>
+          <option>KG VAR</option><option>KG YOK</option>
+        </select>
+        <input id="inOdd" class="in" placeholder="Oran (opsiyonel)" />
+      </div>
+      <div style="display:flex;gap:8px">
+        <select id="inType" class="in">
+          <option value="free">Ücretsiz</option>
+          <option value="vip">VIP</option>
+        </select>
+        <input id="inDate" type="datetime-local" class="in" />
+      </div>
+      <div class="hint">Tarih boş kalırsa “şimdi” kabul edilir. VIP kartları altın rozetle görünür.</div>
+    </div>
+    <div class="modal-f">
+      <button class="btn btn-ghost" onclick="dlg.close()">Vazgeç</button>
+      <button class="btn" onclick="save()">Kaydet</button>
+    </div>
+  </dialog>
+
+<script>
+  // --- storage helpers ---
+  const KEY_FREE = 'mr_tahminler_free';
+  const KEY_VIP  = 'mr_tahminler_vip';
+  const $ = (id)=>document.getElementById(id);
+  const dlg = $('dlg');
+  let currentTab = 'free';
+
+  function now(){ return Date.now(); }
+  function fmtDate(ts){ const d = new Date(ts); return d.toLocaleDateString()+' '+d.toLocaleTimeString(); }
+  function getKey(tab){ return tab==='vip'?KEY_VIP:KEY_FREE; }
+  function load(tab){ try{return JSON.parse(localStorage.getItem(getKey(tab))||'[]')}catch(e){return[]} }
+  function saveArr(tab, arr){ localStorage.setItem(getKey(tab), JSON.stringify(arr)); }
+  function totalCount(){ return load('free').length + load('vip').length; }
+
+  // --- ui actions ---
+  function switchTab(tab){
+    currentTab = tab;
+    $('tabFree').classList.toggle('active', tab==='free');
+    $('tabVip').classList.toggle('active', tab==='vip');
+    render();
+  }
+  function openModal(){
+    $('inHome').value=''; $('inAway').value=''; $('inLeague').value='';
+    $('inPick').value=''; $('inOdd').value=''; $('inType').value=currentTab;
+    $('inDate').value='';
+    dlg.showModal();
+  }
+  function save(){
+    const home=$('inHome').value.trim();
+    const away=$('inAway').value.trim();
+    const league=$('inLeague').value.trim();
+    const pick=$('inPick').value;
+    const odd=$('inOdd').value.trim();
+    const type=$('inType').value;
+    const ts = $('inDate').value ? new Date($('inDate').value).getTime() : now();
+
+    if(!home || !away || !pick){ alert('Ev, deplasman ve tahmin zorunlu.'); return; }
+    const arr = load(type);
+    arr.unshift({ id: String(now()), home, away, league, pick, odd, ts, type });
+    saveArr(type, arr);
+    dlg.close();
+    render();
+  }
+  function del(id){
+    ['free','vip'].forEach(tab=>{
+      let arr = load(tab);
+      const n = arr.length;
+      arr = arr.filter(x=>x.id!==id);
+      if(arr.length!==n){ saveArr(tab, arr); }
+    });
+    render();
+  }
+  function seed(){
+    if(totalCount()>0 && !confirm('Mevcut liste üzerine örnek eklensin mi?')) return;
+    const base = now();
+    const add = (t,h,a,l,p,o,off)=>({id:String(base+off), home:h, away:a, league:l, pick:p, odd:o, ts:base-off, type:t});
+    const s = [
+      add('free','Galatasaray','Fenerbahçe','Süper Lig','KG VAR','1.62',3600_000),
+      add('free','Adana Demir','Trabzonspor','Süper Lig','2.5 ÜST','1.78',7200_000),
+      add('vip','Barcelona','Sevilla','LaLiga','MS 1','1.45',  900_000),
+      add('vip','Milan','Inter','Serie A','MS 2','2.10',  3_600_000),
+      add('free','Dortmund','Leipzig','Bundesliga','MS 1','2.05',  86_400_000),
+    ];
+    const f = s.filter(x=>x.type==='free'); const v = s.filter(x=>x.type==='vip');
+    saveArr('free', f.concat(load('free'))); saveArr('vip', v.concat(load('vip')));
+    render();
+  }
+  function clearAll(){
+    if(!confirm('Tüm tahminleri silmek istediğine emin misin?')) return;
+    localStorage.removeItem(KEY_FREE); localStorage.removeItem(KEY_VIP);
+    render();
+  }
+
+  // --- filtering & render ---
+  function inRange(ts, mode){
+    const d = new Date(); d.setHours(0,0,0,0);
+    const todayStart = d.getTime();
+    const oneDay = 86_400_000;
+    if(mode==='today') return ts>=todayStart;
+    if(mode==='yesterday') return ts>=todayStart-oneDay && ts<todayStart;
+    if(mode==='week') return ts>=now()-7*oneDay;
+    return true;
+  }
+  function render(){
+    const q = $('q').value.toLowerCase();
+    const mode = $('fDay').value;
+    const pickFilter = $('fPick').value;
+    const arr = load(currentTab);
+
+    const out = arr.filter(it=>{
+      const hay = (it.home+' '+it.away+' '+(it.league||'')+' '+it.pick).toLowerCase();
+      const okText = !q || hay.includes(q);
+      const okDay  = inRange(it.ts, mode);
+      const okPick = (pickFilter==='all') || (it.pick===pickFilter);
+      return okText && okDay && okPick;
+    });
+
+    $('countLabel').textContent = totalCount();
+    $('dayLabel').textContent = new Date().toLocaleDateString('tr-TR');
+
+    const grid = $('list');
+    grid.innerHTML = '';
+    if(out.length===0){
+      $('empty').style.display='block';
+      return;
+    } else { $('empty').style.display='none'; }
+
+    out.forEach(it=>{
+      const card = document.createElement('div'); card.className='card';
+      card.innerHTML = `
+        <button class="del" title="Sil" onclick="del('${it.id}')">Sil</button>
+        <div class="head">
+          <span class="badge ${it.type==='vip'?'vip':''}">${it.type==='vip'?'VIP':'Ücretsiz'}</span>
+          <div class="teams">${it.home} <span style="opacity:.6">vs</span> ${it.away}</div>
+        </div>
+        <div class="sub">${it.league?it.league+' • ':''}${fmtDate(it.ts)}</div>
+        <div class="pick">
+          <span class="pill ${/MS 1|MS 2|2\.5 ÜST|KG VAR/.test(it.pick)?'good':''}">${it.pick}</span>
+          ${it.odd?`<span class="pill">Oran: ${it.odd}</span>`:''}
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  // init
+  render();
+</script>
+</body>
+</html>
